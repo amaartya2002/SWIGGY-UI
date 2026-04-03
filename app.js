@@ -12,5 +12,9 @@ const ele = React.createElement("div", { id: "container" }, [
  * But when we render this JS object on to the DOM it becomes htmlElement
  */
 
+// Create React element using jsx
+
+const jsxElement = <h1 id="jsx-heading">This is a jsx syntax to create react element</h1>
+
 const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(ele)
+root.render(jsxElement)

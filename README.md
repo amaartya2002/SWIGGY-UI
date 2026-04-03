@@ -13,3 +13,11 @@
 ## ReactDOM.createRoot()
 
 - React api to create root which will be responsible for rendering items on the DOM.
+- ReactDOM replaces everything inside the root with the html you want to render.
+
+## JSX syntax to create React Element
+
+- Create React element using jsx
+- this is a html like syntax inside js , its kinda xml
+- this is not html inside js
+- this JSX is not part of React
