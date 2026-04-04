@@ -1,4 +1,83 @@
 * {
   background-color: black;
   color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.img-element > img {
+  width: 150px;
+  /* border: 2px solid red; */
+  padding: 12px 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid gray;
+  margin: 12px 8px;
+}
+
+.header-links > ul {
+  display: flex;
+  align-items: center;
+  /* border: 2px solid gray; */
+  justify-content: space-between;
+  list-style: none;
+  gap: 16px;
+  padding: 0px 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.res-card {
+  /* width: 220px; */
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: 2px solid brown;
+}
+
+.res-card:hover {
+  transform: scale(1.02);
+}
+
+.res-card-img > img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.res-card-info {
+  padding: 10px 12px;
+}
+
+.res-card-info h2 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.res-card-info p {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 4px;
+}
+
+.res-card-info .rating {
+  font-size: 13px;
+  color: #48c479;
+}
+
+/* minmax(220px, 1fr) is basically saying — "each card should be at least 220px wide, but if there's extra space, share it equally among all cards." */
+.res-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 16px;
 }
