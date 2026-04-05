@@ -104,3 +104,41 @@
   gap: 24px;
   padding: 16px;
 }
+
+.login-btn {
+  padding: 6px 14px;
+  background-color: aliceblue;
+  color: #1a1a1a;
+  border-radius: 16px;
+  border: 2px solid oklch(27.8% 0.033 256.848);
+  cursor: pointer;
+}
+
+.res-body-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.res-search {
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.res-search > input {
+  background-color: aliceblue;
+  color: #1a1a1a;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+.res-search > button {
+  background-color: oklch(70.7% 0.165 254.624);
+  color: #1a1a1a;
+  padding: 6px 12px;
+  border-radius: 16px;
+  border: 2px solid oklch(37.1% 0 0);
+}

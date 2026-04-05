@@ -21,4 +21,4 @@
 - this is a html like syntax inside js , its kinda xml
 - this is not html inside js
 - this JSX is not part of React
-- babel transpiles this jsx code into React.createElement() - this is a JS object then when its rendered into the DOM it gets converted into a HTMLelement
+- babel transpiles this jsx code into React.createElement() - this is a JS object then when its rendered into it gets converted into a HTMLelement
