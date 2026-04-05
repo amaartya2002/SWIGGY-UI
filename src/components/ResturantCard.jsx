@@ -2,7 +2,7 @@ import CDN_URL from "../utils/common";
 
 const ResturantCard = (props) => {
   const { resCard } = props;
-  console.log(resCard);
+  //console.log(resCard);
   const { id, name, cloudinaryImageId, cuisines, avgRating, costForTwo } =
     resCard?.info;
   const { deliveryTime } = resCard?.info?.sla;

@@ -1,9 +1,31 @@
 import ResturantCard from "./ResturantCard";
-import { useState } from "react";
-import resList from "../utils/mockData";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
-  const [listOfResturants, setListofResturants] = useState(resList);
+  const [listOfResturants, setListofResturants] = useState([]);
+
+  const fetchAPiData = () => {
+    fetch("https://namastedev.com/api/v1/listRestaurants")
+      .then((res) => {
+        return res.json();
+      })
+      .then((finalData) => {
+        setListofResturants(
+          finalData?.data?.data?.cards[1]?.card?.card?.gridElements
+            ?.infoWithStyle?.restaurants,
+        );
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    fetchAPiData();
+  }, []);
+
+  if (listOfResturants.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div className="res-body">
