@@ -1,5 +1,6 @@
 import { APP_LOGO } from "../utils/common";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [reactLoginBtn, setReactLoginBtn] = useState("Login");
@@ -10,7 +11,7 @@ const Header = () => {
       </div>
       <div className="header-links">
         <ul>
-          <li>About</li>
+          <Link to={"/about"}>About</Link>
           <li>Help</li>
           <li>SignIn</li>
           <li>Cart</li>
