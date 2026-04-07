@@ -1,37 +1,13 @@
-import { useState, useEffect } from "react";
+import useResturantMenu from "../utils/useResturantMenu";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router";
 
 const ResturantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
-  const [resMenu, setResMenu] = useState(null);
-
   const { resId } = useParams();
 
   console.log(resId);
 
-  useEffect(() => {
-    getResInfo();
-  }, []);
-
-  async function getResInfo() {
-    const data = await fetch(
-      "https://namastedev.com/api/v1/listRestaurantMenu/" + resId,
-    );
-    const res = await data.json();
-    console.log(res?.data?.cards[2]?.card?.card?.info);
-
-    const allCards =
-      res?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-
-    const menuCategories = allCards?.filter((c) =>
-      c?.card?.card?.["@type"]?.includes("ItemCategory"),
-    );
-
-    console.log(menuCategories);
-    setResInfo(res?.data?.cards[2]?.card?.card?.info);
-    setResMenu(menuCategories);
-  }
+  const [resInfo, resMenu] = useResturantMenu(resId);
 
   if (!resInfo) return <Shimmer />;
 
