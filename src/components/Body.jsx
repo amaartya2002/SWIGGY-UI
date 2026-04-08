@@ -2,12 +2,15 @@ import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [listOfResturants, setListofResturants] = useState([]);
   const [filteredResturants, setFilteredResturants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [searchRes, setSearchRes] = useState(false);
+
+  const isOnline = useOnline();
 
   console.log("Body Rendered");
 
@@ -33,6 +36,10 @@ const Body = () => {
   useEffect(() => {
     fetchAPiData();
   }, []);
+
+  if (isOnline === false) {
+    return <h1>Offline, please check your internet connection!</h1>;
+  }
 
   if (filteredResturants.length === 0) {
     return <Shimmer />;
